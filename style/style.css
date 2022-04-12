@@ -1,0 +1,24 @@
+#logo {
+  color: #f4f4f4;
+  padding-left: 0.5rem;
+}
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Landing Page */
+.home-text {
+  padding-top: 10vh;
+  text-align: center;
+}
+
+.home-text h2{
+  padding-bottom: 2.5rem;
+  font-size: 2.5rem;
+}
+
+.home-text h1 {
+  padding-bottom: 0.75rem;
+  font-size: 5rem;
+}
