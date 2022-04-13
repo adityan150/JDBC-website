@@ -5,11 +5,14 @@
   box-sizing: border-box;
 }
 
-/* General CSS */
+/* HTML tags */
+body {
+  background: #f5f5f7;
+}
 
 /* Utility */
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
 }
 
 .learn-more-btn {
@@ -39,7 +42,7 @@
 
 .navbar a {
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
 
 /* Header */
@@ -69,12 +72,23 @@
   margin-bottom: 1rem;
 }
 
+.header-img {
+  width: 100vw;
+  padding-bottom: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Tile display */
 
 .tile-display {
-  max-width: 1100px;
-  margin: 10vh auto;
-  padding: 3rem;
+  max-width: 1380px;
+  margin: 8rem auto;
+  padding: 8rem 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 2rem;
   background-color: #fff;
   -webkit-border-radius: 2rem;
@@ -83,12 +97,29 @@
   -o-border-radius: 2rem;
 }
 
-.tile-display .tile-content-wrapper {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.tile-display .tile-content-wrapper .tile-img {
+
+.tile-display .tile-img {
   width: 50%;
+  overflow: none;
+}
+
+.tile-display .tile-text {
+  width: 50%;
+  font-size: 1.5rem;
+}
+
+.tile-display .tile-text h1 {
+  font-size: 5rem;
+  color: #4b5a63;
+  padding-bottom: 5rem;
+}
+
+.tile-display .tile-buttons a {
+  font-size: 1rem;
+  padding: 1.1rem 4.5rem;
+  border-radius: 3rem;
+  -webkit-border-radius: 3rem;
+  -moz-border-radius: 3rem;
+  -ms-border-radius: 3rem;
+  -o-border-radius: 3rem;
 }
