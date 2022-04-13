@@ -1,24 +1,94 @@
+/* CSS reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* General CSS */
+
+/* Utility */
+.container {
+  max-width: 1200px;
+}
+
+.learn-more-btn {
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+.learn-more-btn:hover {
+  text-decoration: underline;
+}
+
+.buy-btn.btn.btn-primary {
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+
+
+/* Navbar */
 #logo {
   color: #f4f4f4;
+  font-size: 1.2rem;
   padding-left: 0.5rem;
 }
+
 .navbar a {
   text-decoration: none;
   color: white;
 }
 
-/* Landing Page */
+/* Header */
 .home-text {
   padding-top: 10vh;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .home-text h2{
   padding-bottom: 2.5rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .home-text h1 {
   padding-bottom: 0.75rem;
-  font-size: 5rem;
+  font-size: 3.5rem;
+}
+
+.home-text p {
+  font-size: 1.4rem;
+}
+
+.home-text a {
+  margin-bottom: 1rem;
+}
+
+/* Tile display */
+
+.tile-display {
+  max-width: 1100px;
+  margin: 10vh auto;
+  padding: 3rem;
+  border-radius: 2rem;
+  background-color: #fff;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+
+.tile-display .tile-content-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tile-display .tile-content-wrapper .tile-img {
+  width: 50%;
 }
