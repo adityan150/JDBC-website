@@ -33,10 +33,25 @@ body {
   font-size: 1.2rem;
   padding-left: 0.5rem;
 }
-
-.navbar a {
+#logo a {
   text-decoration: none;
+  color: #f4f4f4;
+}
+
+.navbar .nav-link {
+  width: 5.5rem;
+  text-decoration: none;
+  text-align: center;
   color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.navbar .nav-link:hover {
+  background-color: #f5f5f7;
+  color: #000;
 }
 
 /* --------------Header---------------- */
@@ -48,18 +63,20 @@ body {
   flex-direction: column;
 }
 
-.home-text h2{
-  padding-bottom: 2.5rem;
-  font-size: 2rem;
-}
-
 .home-text h1 {
   padding-bottom: 0.75rem;
-  font-size: 3.5rem;
+  font-size: 4rem;
+}
+.home-text h2{
+  padding-bottom: 2.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
+
 .home-text p {
-  font-size: 1.4rem;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 .home-text a {
@@ -75,7 +92,7 @@ body {
 
 /*-------------- Tile display --------------*/
 
-.tile-display {
+#tile-display {
   max-width: 1380px;
   margin: 6rem auto;
   padding: 8rem 12rem;
@@ -91,23 +108,23 @@ body {
 }
 
 
-.tile-display .tile-img {
+#tile-display .tile-img {
   width: 50%;
   overflow: none;
 }
 
-.tile-display .tile-text {
+#tile-display .tile-text {
   width: 50%;
   font-size: 1.5rem;
 }
 
-.tile-display .tile-text h1 {
+#tile-display .tile-text h1 {
   font-size: 5rem;
   color: #4b5a63;
   padding-bottom: 5rem;
 }
 
-.tile-display .tile-buttons a {
+#tile-display .tile-buttons a {
   font-size: 1rem;
   padding: 1.1rem 4.5rem;
   border-radius: 3rem;
@@ -124,12 +141,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 4rem 0;
 }
 
 #features h2 {
   color: #4b5a63;
   font-size: 3rem;
-  padding: 6rem 0 3rem 0;
 }
 
 /* Watch Display */
@@ -137,6 +154,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 3.5rem;
 }
 
 #features .watch-display img {
@@ -150,12 +168,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
-  padding: 2rem;
+  padding-top: 2rem;
 }
 
 #features .watch-display .watch-color {
-  padding: 0.35rem;
+  padding: 0.4rem;
   margin: 0.2rem;
   border-radius: 1rem;
   -webkit-border-radius: 1rem;
@@ -203,9 +220,15 @@ body {
   padding: 1rem 5rem;
   flex: 1;
 }
+#features .display-text h3 {
+  font-size: 2rem;
+}
+#features .display-text p {
+  font-size: 1.5rem;
+}
 
 #features hr {
-  margin: 4rem 0;
+  margin: 3rem 0;
   width: 70%;
   height: 1.1px;
 }
@@ -216,6 +239,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 5vw;
   grid-auto-columns: auto;
+  padding-top: 2rem;
 }
 
 #features .feature-grid .feature {
@@ -235,4 +259,54 @@ body {
 }
 #features .feature h4 {
   padding: 4rem 0;
+}
+
+/* --------------------Footer----------------- */
+footer {
+  margin: auto;
+  max-width: 90vw;
+  padding-top: 4rem;
+}
+
+/* -------Terms-------- */
+#terms i{
+  font-size: 2.5rem;
+}
+
+#terms p {
+  padding-top: 1.5rem;
+}
+
+#terms ol li {
+  padding-top: 0.4rem;
+}
+
+footer hr {
+  margin: 2rem 0;
+  padding: 1px;
+}
+
+/* -------Contact------- */
+#contact a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+#office {
+  background-color: #fff;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  padding: 3rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+/* -------Foot----------- */
+#foot {
+  text-align: center;
+  padding-top: 3rem;
 }
