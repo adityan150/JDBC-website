@@ -1,3 +1,3 @@
 # Sentiment-Analysis
 
-Project contains the Maven project with Tomcat 9 as the runtime environment.
+Java project with tomcat9 as runtime environment.
