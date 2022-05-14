@@ -46,12 +46,6 @@
 		<br>
 		<h3>Redirecting...</h3>
     </div>
-  
-    <script>
-    setTimeout(	function() {
-		document.getElementById("homepage").click();
-	}, 4000);
-	</script> 
 	
 		<!-- ----------------------------------Footer----------------------- -->
     <footer>
@@ -121,19 +115,28 @@
           </p>
         </div>
       </div>
-      <script>
+      
+      <div id="foot">
+        <p>Copyright &#169; 2022 Apple Inc. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- Go to Reviews page -->
+    <form id="hidden" action="controller" method="get">
+    	<input id="reviews-page" type="submit" value=""/>
+	</form>
+	
+	<script>
 		function showMoreContact() {
-		  var x = document.getElementById("office");
+		  const x = document.getElementById("office");
 		  if (x.style.display === "none") {
 		    x.style.display = "block";
 		  } else {
 		    x.style.display = "none";
 		  }
 		}
+		setTimeout(	function() {
+			document.getElementById("reviews-page").click();
+		}, 4000);
 	  </script>
-      <div id="foot">
-        <p>Copyright &#169; 2022 Apple Inc. All rights reserved.</p>
-      </div>
-    </footer>
 </body>
 </html>

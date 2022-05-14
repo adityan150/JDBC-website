@@ -1,6 +1,7 @@
 package com.sentiment.review.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,7 +16,7 @@ import com.sentiment.review.model.*;
 /**
  * Servlet implementation class UserServlet
  */
-@WebServlet("/submit")
+@WebServlet("/controller")
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
@@ -33,9 +34,18 @@ public class UserServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("UserServlet doGet");
-		
 		System.out.println(request.getContextPath());
+
+		try {
+			// Get data ArrayList
+			ArrayList<User> data = userDao.getReviews();
+			// Store data in request scope
+			request.setAttribute("data", data);			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		
+		// Forward to Reviews submission page
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/submitForm.jsp");
 		dispatcher.forward(request, response);
 	}

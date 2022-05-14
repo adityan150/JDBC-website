@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -36,7 +34,7 @@
             <a class="nav-link" href="#features">About</a>
           </li>
           <li class="nav-item">
-            <form action="submit" method="get">
+            <form action="controller" method="get">
             	<input class="nav-link" type="submit" value="Reviews"/>
             </form>
           </li>
@@ -61,14 +59,16 @@
     <!-- ------------------------Tile---------------------- -->
     <section id="tile-display">
       <div class="tile-img">
-        <img src="${pageContext.request.contextPath}/img/compare-apple.jpg" alt="apple watch" />
+        <img id="img1" src="${pageContext.request.contextPath}/img/compare-apple.jpg" alt="apple watch" />
+        <img id="img2" src="${pageContext.request.contextPath}/img/compare-older.jpg" alt="older watch" />
       </div>
+      
       <div class="tile-text">
         <p>Our largest display yet.</p>
-        <h1>Over 50% more screen area than others.</h1>
+        <h1>Over 50% more screen area than the older version.</h1>
         <div class="tile-buttons">
-          <a href="#" class="btn btn-dark">Apple</a>
-          <a href="#" class="btn btn-dark">Others</a>
+          <button class="btn btn-dark" onClick="fadeImg('#img2')">Apple</button>
+          <button class="btn btn-dark" onClick="showImg('#img2')">Older</button>
         </div>
       </div>
     </section>
@@ -218,12 +218,40 @@
       </div>
       <script>
 		function showMoreContact() {
-		  var x = document.getElementById("office");
+		  const x = document.getElementById("office");
 		  if (x.style.display === "none") {
 		    x.style.display = "block";
 		  } else {
 		    x.style.display = "none";
 		  }
+		}
+		
+		function fadeImg(id) {
+			const image = document.querySelector(id);
+			var op = 1;  // initial opacity
+		    var timer = setInterval(function () {
+		        if (op <= 0.01){
+		            clearInterval(timer);
+		            image.style.display = 'none';
+		        }
+		        image.style.opacity = op;
+		        image.style.filter = 'alpha(opacity=' + op * 100 + ")";
+		        op -= op * 0.05;
+		    }, 10);
+		}
+		
+		function showImg(id) {
+			const image = document.querySelector(id);
+			var op = 0.1;  // initial opacity
+		    image.style.display = 'block';
+		    var timer = setInterval(function () {
+		        if (op >= 1){
+		            clearInterval(timer);
+		        }
+		        image.style.opacity = op;
+		        image.style.filter = 'alpha(opacity=' + op * 100 + ")";
+		        op += op * 0.05;
+		    }, 10);
 		}
 	  </script>
       <div id="foot">

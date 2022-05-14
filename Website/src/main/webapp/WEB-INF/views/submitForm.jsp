@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.sentiment.review.model.User" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,10 +45,10 @@
       </div>
     </nav>
     <!-- -----------Review Form------------- -->
-	<div class="container" id="review-form">
+	<section class="container" id="review-form">
 	  <h1><i class="bi bi-apple"></i> &nbsp; Post a review</h1>
-	  <form action="submit" method="post">
-		<div class="form-group">
+	  <form class="form-group"  action="controller" method="post">
+		
 			<label for="first_name">First Name</label>
 			<input id="first_name" class="form-control" type="text" name="first_name" />
 			<label for="last_name">Last Name</label>
@@ -54,19 +56,63 @@
 			<label for="email">Email</label>
 			<input id="email" class="form-control" type="email" name="email" placeholder="name@exmaple.com" />
 			<label for="stars">Stars</label>
-			<select id="stars" class="form-control" name="stars">
-					<option>5</option>
-					<option>4</option>
-					<option>3</option>
-					<option>2</option>
-					<option>1</option>
-			</select>
+			<div>
+			    <span class="star-cb-group">
+			      <input type="radio" id="rating-5" name="stars" value="5" />
+			      <label for="rating-5">5</label>
+			      <input type="radio" id="rating-4" name="stars" value="4" />
+			      <label for="rating-4">4</label>
+			      <input type="radio" id="rating-3" name="stars" value="3" />
+			      <label for="rating-3">3</label>
+			      <input type="radio" id="rating-2" name="stars" value="2" />
+			      <label for="rating-2">2</label>
+			      <input type="radio" id="rating-1" name="stars" value="1" />
+			      <label for="rating-1">1</label>
+			      <input type="radio" id="rating-0" name="stars" value="0" class="star-cb-clear" checked="checked"/>
+			      <label for="rating-0">0</label>
+			    </span>
+			</div>
 			<label for="review">Review</label>
-			<textarea id="review" class="form-control" type="text" name="review" rows="3" placeholder="Your Review"></textarea>
-		</table>
-		<input class="btn btn-dark" type="submit" value="Submit" />
+			<textarea id="review" class="form-control" name="review" rows="3" placeholder="Your Review"></textarea>
+			<div id="submit-btn">
+				<input class="btn btn-dark" type="submit" value="Submit" />
+			</div>
 	  </form>
-	</div>
+	  </section>
+	  <section class="container" id="review-container">
+	  <h3>Reviews</h3>
+	  	 <%
+	  		ArrayList<User> data = (ArrayList<User>)request.getAttribute("data");
+	  		for (int i = 0; i < data.size(); i++) {
+	  			User user = data.get(i);
+	  			String name = user.getFirst_name() + " " + user.getLast_name();
+	  			String email = user.getEmail();
+	  			email = email.substring(0, email.lastIndexOf("@"));
+	  			int stars = user.getStars();
+	  			String starsIcon = "";
+	  			for (int j = 1; j <= 5; j++){
+	  				if (j <= stars)
+	  					starsIcon += "★ ";
+	  				else
+	  					starsIcon += "☆ ";
+	  			}
+	  			String review = user.getReview();
+	  			out.println("<div class='review-box'>");
+	  				out.println("<div class='header'>");
+	  					out.println("<i class='bi bi-person-circle'></i>");
+	  					//out.println("<img src='"+request.getContextPath() +"/img/user-icon.png' alt='user'/>");
+	  					out.println("<span class='header-text'>");
+	  						out.println("<p class='box-name'>&nbsp;"+ name + "</p>");
+	  						out.println("<p class='box-stars'>"+starsIcon+"</p>");
+	  					out.println("</span>");
+	  				out.println("</div>");
+	  				out.println("<p class='box-email'>"+email+"</p>");
+	  				out.println("<p class='box-review'>"+review+"</p>");
+	  			out.println("</div>");
+	  		}
+	  	%>
+	  </section>
+	  
 	<!-- ----------------------------------Footer----------------------- -->
     <footer>
     <hr>
@@ -137,7 +183,7 @@
       </div>
       <script>
 		function showMoreContact() {
-		  var x = document.getElementById("office");
+		  const x = document.getElementById("office");
 		  if (x.style.display === "none") {
 		    x.style.display = "block";
 		  } else {

@@ -1,5 +1,8 @@
 package com.sentiment.review.model;
 
+/*
+ * Data model for database record
+ */
 public class User {
 	private int id;
 	private String first_name;
