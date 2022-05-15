@@ -101,12 +101,13 @@
 	  				out.println("<div class='header'>");
 	  					out.println("<i class='bi bi-person-circle'></i>");
 	  					//out.println("<img src='"+request.getContextPath() +"/img/user-icon.png' alt='user'/>");
-	  					out.println("<span class='header-text'>");
+	  					//out.println("<span class='header-text'>");
 	  						out.println("<p class='box-name'>&nbsp;"+ name + "</p>");
-	  						out.println("<p class='box-stars'>"+starsIcon+"</p>");
-	  					out.println("</span>");
+	  						
+	  					//out.println("</span>");
 	  				out.println("</div>");
 	  				out.println("<p class='box-email'>"+email+"</p>");
+	  				out.println("<p class='box-stars'>"+starsIcon+"</p>");
 	  				out.println("<p class='box-review'>"+review+"</p>");
 	  			out.println("</div>");
 	  		}

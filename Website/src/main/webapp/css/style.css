@@ -501,38 +501,31 @@ footer hr {
 	width: 100%;
 	text-align: left;
 	margin-top: 1.5rem;
-	padding: 2rem 3rem 3rem 3rem;
+	padding: 1.5rem 3rem 2rem 3rem;
 	background-color: #fff;
 	border-radius: 1rem;
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
 }
 
 #review-container .review-box .header {
-	width: 58%;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: flex-start;
-}
-#review-container .review-box .header .header-text {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-}
-
-#review-container .review-box .header .box-name {
-	max-width: fit-content;
-	width: 50%;
-	padding: 0;
-	margin-left: 0.5rem;
 }
 
 #review-container .review-box .header i {
 	font-size: 2rem;
 	color: #3D5168;
 }
+
+#review-container .review-box .box-name {
+	max-width: fit-content;
+	width: 70%;
+	padding: 0;
+	margin-left: 0.5rem;
+}
+
 #review-container .review-box .box-email {
 	padding: 0;
 	margin-left: 2.8rem;
@@ -545,10 +538,12 @@ footer hr {
 	padding: 0;
 	font-size: 1.8rem;
 	color: gold;
+	position: relative;
+	top: -1.2rem;
+	left: 2.5rem;
 }
 
 #review-container .review-box .box-review {
-	margin-top: 0.5rem;
 	margin-left: 2.8rem;
 }
 
